@@ -11,12 +11,10 @@ g++ main.cpp -o main.exe
 To convert plain-text into ASCII art and <b>print output in terminal</b>:
 ```
 ./main.exe display font.txt "My Sentence" "#" "."
-
 ```
 To convert plain-text into ASCII art and <b>save output in a .txt file</b>:
 ```
 ./main.exe display font.txt "My Sentence" "#" "." > output.txt
-
 ```
 Command Arguments:
 <ul>
@@ -30,7 +28,6 @@ Command Arguments:
 To convert ASCII art into plain-text and <b>print output in terminal</b>:
 ```
 ./main.exe read font.txt input.txt
-
 ```
 Command Arguments:
 <ul>
