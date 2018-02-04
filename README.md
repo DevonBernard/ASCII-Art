@@ -35,8 +35,16 @@ Command Arguments:
 	<li>font.txt: Required file that determines ASCII shapes.</li>
 	<li>input.txt: Your ASCII file that you want converted into plain-text.</li>
 </ul>
+## WebAssembly
+The project can be compiled using [Emscripten](http://emscripten.org) to a WebAssembly module and run in the browser. You need to download and install Emscripten toolchain as described on the official [website](http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html). Then you can compile the source by using the following command:
+```
+em++ -Os main.cpp -s WASM=1 -o wasm-demo.js --preload-file font.txt
+```
+After that you can run `wasm-demo.html` in the browser.
 ## Contributors
 Devon Bernard
 * dwbcoding@gmail.com
 * [LinkedIn](https://www.linkedin.com/in/devonbernard)
 * [@DBCoding](https://www.twitter.com/DBCoding)
+Boyan Mihaylov
+* [@boyanio](https://twitter.com/boyanio)

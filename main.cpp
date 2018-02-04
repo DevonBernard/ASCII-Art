@@ -17,7 +17,7 @@ void ReadFont(const std::string &font_file, int &width, int &height, std::vector
   std::ifstream istr(font_file.c_str());
   if (!istr) { 
     std::cerr << "ERROR: cannot open font file " << font_file << std::endl;
-	close(1);
+	exit(1);
   }
   // read in the width & height for every character in the file
   istr >> width >> height;
@@ -63,7 +63,7 @@ void ReadFont(const std::string &font_file, int &width, int &height, std::vector
   }
 }
 // ======================================================================================
-char find_characters(std::string &read_file_line, char &foreground_character, char &background_character ){
+void find_characters(std::string &read_file_line, char &foreground_character, char &background_character ){
   int array[255] = {0}; // initialize all elements to 0
   std::vector<char> str;
   // Add all characters from the user-entered ASCII file to an array
@@ -210,20 +210,20 @@ int main(int argc, char* argv[]){
   //if user wants to convert an ASCII art file to text run the read function
   if (output_type == "read"){
     if(argc != 4){
-      std::cerr << "Please enter only 4 parameters";
+      std::cerr << "Please enter only 4 parameters" << std::endl;
       exit(1);
     }
     std::string output_string = read(std::string(argv[2]), argv[3]);
-    std::cout << output_string;
+    std::cout << output_string << std::endl;
   }else if(output_type=="display"){
     // If user wants to display ASCII art run the display function
     if(argc != 6){
-      std::cerr << "Please enter only 6 parameters";
+      std::cerr << "Please enter only 6 parameters" << std::endl;
       exit(1);
     }
     std::string output_string = display(std::string(argv[2]),std::string(argv[3]),char(argv[4][0]),char(argv[5][0]));
-    std::cout << output_string;
+    std::cout << output_string << std::endl;
   }else{
-    std::cerr << "Your first parameter must be either read or display";
+    std::cerr << "Your first parameter must be either read or display" << std::endl;
   }
 }
